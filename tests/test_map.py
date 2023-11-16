@@ -103,3 +103,12 @@ class TestMap(TestCase):
         expectedPosition = Position(0,5)
         actualPosition = testobj.calculate_new_position(startingPosition, Direction.WEST)
         self.assertEqual(expectedPosition, actualPosition)
+
+    def test_calculate_new_position_when_invalid_DIRECTION(self):
+        testobj = Map()
+        startingPosition = Position(0,5)
+        expectedPosition = Position(0,5)
+        # actualPosition = testobj.calculate_new_position(startingPosition, "FOO")
+        # self.assertEqual(expectedPosition, actualPosition)
+        with self.assertRaises(Exception):
+            testobj.calculate_new_position(startingPosition, "FOO")
