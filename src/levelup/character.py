@@ -22,4 +22,5 @@ class Character:
     def enter_map(self, map :Map) -> None:
         # TODO: implement method here and remove the print statement below
         self.map = map
+        self.map.starting_position = self.current_position
         # print("enter_map method not yet implemented")

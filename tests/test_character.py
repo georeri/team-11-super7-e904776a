@@ -21,7 +21,7 @@ class TestCharacter(TestCase):
         stubbed_map = Map()
         testobj.enter_map(stubbed_map)
         self.assertEqual(stubbed_map, testobj.map)
-        # self.assertEqual(testobj.current_position, stubbed_map.starting_position)
+        self.assertEqual(testobj.current_position, stubbed_map.starting_position)
 
     # # Remove comments to run this test, which will motivate you to write the production method
     def test_move_updates_position(self):
