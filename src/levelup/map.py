@@ -26,7 +26,12 @@ class Map ():
     def is_position_valid(self, position :Position) -> bool:
         # TODO: implement method here and remove the print statement below
         print("is_position_valid method not yet implemented")
-        return False        
+        # MIN_ALLOWED = 0
+        # MAX_ALLOWED = 9
+        if ((self.MIN_ALLOWED <= position.x <= self.MAX_ALLOWED) and (self.MIN_ALLOWED <= position.y <= self.MAX_ALLOWED)):
+            return True
+        else:
+            return False
 
     def calculate_new_position(self, current_position: Position, direction: Direction) -> Position:
         # What should we return here so our character tests will work in isolation?
@@ -44,5 +49,4 @@ class Map ():
             self.starting_position.y = min(current_position.y + 1, self.MAX_ALLOWED)
         else:
             print("move method takes direction")
-
         return self.starting_position
