@@ -9,12 +9,12 @@ class TestGameController(TestCase):
         assert testobj.status != None
 
     # Remove comments to run this test, which will motivate you to write the production method
-    # def test_create_character_updates_status(self):
-    #     testobj = GameController()
-    #     arbitrary_name = "ARBITRARY"
-    #     testobj.create_character(arbitrary_name)
-    #     self.assertEqual(arbitrary_name, testobj.status.character_name)
-    #     self.assertIsNotNone(testobj.character)
+    def test_create_character_updates_status(self):
+        testobj = GameController()
+        arbitrary_name = "ARBITRARY"
+        testobj.create_character(arbitrary_name)
+        self.assertEqual(arbitrary_name, testobj.status.character_name)
+        self.assertIsNotNone(testobj.character)
 
     # # Remove comments to run this test, which will motivate you to write the production method
     # def test_start_game_creates_map_and_enters_char(self):
