@@ -5,7 +5,7 @@ from levelup.direction import Direction
 class Map ():
 
     starting_position = Position(0,0)
-    positions = []
+    # positions = []
     size: Tuple[int, int] = (10, 10)
 
     # Exists for easy testing
@@ -13,7 +13,13 @@ class Map ():
 
     def __init__(self):
         # TODO: implement method here and remove the print statement below
-        print("map constructor method not yet implemented")
+        # print("map constructor method not yet implemented")
+        self.starting_position = Position(0,0)
+        self.positions = []
+        for x in range(0,10):
+            self.positions.append([Position(x,y) for y in range(0,10)])
+        self.size = (10,10)
+        self.size: Tuple[int, int] = (10, 10)
 
     def is_position_valid(self, position :Position) -> bool:
         # TODO: implement method here and remove the print statement below
