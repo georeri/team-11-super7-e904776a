@@ -2,6 +2,7 @@ from unittest import TestCase
 from levelup.character import Character, DEFAULT_CHARACTER_NAME
 from tests.map_double import MapDouble
 from levelup.direction import Direction
+from levelup.position import Position
 
 class TestCharacter(TestCase):
     ARBITRARY_NAME = "MyName"
@@ -28,12 +29,23 @@ class TestCharacter(TestCase):
         stubbed_map = MapDouble()
         testobj.map = stubbed_map        
         
+        testobj.current_position = Position(2, 4)
         testobj.move(Direction.EAST)
+        self.assertEqual(testobj.current_position.x, 3)
+        self.assertEqual(testobj.current_position.y, 4)
 
-        self.assertEqual(stubbed_map.STUBBED_X, testobj.current_position.x)
-        self.assertEqual(stubbed_map.STUBBED_Y, testobj.current_position.y)
-
+        testobj.current_position = Position(8, 10)
         testobj.move(Direction.WEST)
-        self.assertEqual(stubbed_map.STUBBED_X, testobj.current_position.x)
-        self.assertEqual(stubbed_map.STUBBED_Y, testobj.current_position.y)
+        self.assertEqual(testobj.current_position.x, 7)
+        self.assertEqual(testobj.current_position.y, 10)
+
+        testobj.current_position = Position(5, 5)
+        testobj.move(Direction.NORTH)
+        self.assertEqual(testobj.current_position.x, 5)
+        self.assertEqual(testobj.current_position.y, 4)
+
+        testobj.current_position = Position(2, 2)
+        testobj.move(Direction.SOUTH)
+        self.assertEqual(testobj.current_position.x, 2)
+        self.assertEqual(testobj.current_position.y, 3)
 
