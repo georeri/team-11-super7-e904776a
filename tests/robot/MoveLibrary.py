@@ -4,6 +4,9 @@ from levelup.direction import Direction
 class MoveLibrary:
     start_x: int
     start_y: int
+    end_x: int
+    end_y: int
+
     move_count: int
 
     controller = GameController()
@@ -40,7 +43,7 @@ class MoveLibrary:
 
     def character_xposition_should_be(self, expected):
         end_x = int(self.controller.status.current_position[0])
-        assert end_x == int(expected), f"Expected xpos: {expected}, Actual: {end_y}"
+        assert end_x == int(expected), f"Expected xpos: {expected}, Actual: {end_x}"
 
     def character_yposition_should_be(self, expected):
         end_y = int(self.controller.status.current_position[1])
