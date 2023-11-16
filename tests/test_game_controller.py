@@ -37,10 +37,10 @@ class TestGameController(TestCase):
         mock_char = Character(arbitrary_name)
         testobj.character = mock_char
         arbitrary_direction = Direction.NORTH
-
+        
         testobj.move(arbitrary_direction)
 
-        # self.assertTrue(mock_char.is_move_called)
+        self.assertTrue(mock_char.is_move_called)
         # self.assertEqual(mock_char.last_move_direction, arbitrary_direction)
         
         

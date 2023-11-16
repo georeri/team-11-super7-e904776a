@@ -3,9 +3,6 @@ from levelup.direction import Direction
 from levelup.map import Map
 from levelup.position import Position
 
-
-
-
 class GameStatus:
     character_name: str = ""
     current_position: tuple = (-100,-100)
@@ -37,6 +34,7 @@ class GameController:
 
     def move(self, direction: Direction) -> None:
         # TODO: implement method here and remove the print statement below
+        self.character.move(direction)
         print("move method not yet implemented")
 
         # Status code is written for you
