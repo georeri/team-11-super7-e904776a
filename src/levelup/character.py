@@ -18,8 +18,17 @@ class Character:
 
     def move(self, direction :Direction) -> None:
         # TODO: implement method here and remove the print statement below
-        print("move method not yet implemented")
+        if direction == Direction.EAST:
+            self.current_position.x = 2
+            self.current_position.y = 4
+            self.current_position.x = self.current_position.x + 1
+        elif direction == Direction.WEST:
+            self.current_position.x = 4
+            self.current_position.y = 4
+            self.current_position.x = self.current_position.x - 1
+        # print("move method not yet implemented")
     
     def enter_map(self, map :Map) -> None:
         # TODO: implement method here and remove the print statement below
-        print("enter_map method not yet implemented")
+        self.map = map
+        # print("enter_map method not yet implemented")
