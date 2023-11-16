@@ -9,6 +9,7 @@ class Character:
     current_position = Position(-100,-100)
     gameMap = Map()
     is_move_called = True
+    last_move_direction = None
 
     # Since python doesn't do method overloading, this is how we support a constructor with optional parameters
     def __init__(self, character_name=DEFAULT_CHARACTER_NAME):
@@ -19,6 +20,7 @@ class Character:
 
     def move(self, direction :Direction) -> None:
         self.current_position = self.gameMap.calculate_new_position(self.current_position, direction)
+        self.last_move_direction = direction
         self.is_move_called = True
     
     def enter_map(self, gameMap :Map) -> None:
