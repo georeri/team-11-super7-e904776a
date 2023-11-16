@@ -4,7 +4,9 @@ from levelup.position import Position
 
 class TestPositionInitWithXY(TestCase):
     def test_init(self):
-        # Create a new position
+        Pos_object = Position(3,4)  # Create a new position
 
-        # Assert that the x and y values are correct
-        pass
+        assert Pos_object.x == 3 and Pos_object.y == 4  # Assert that the x and y values are correct
+        
+if __name__ == "__main__":
+    unittest.main()
