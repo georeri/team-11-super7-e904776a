@@ -1,6 +1,5 @@
 from unittest import TestCase
 from levelup.character import Character, DEFAULT_CHARACTER_NAME
-from tests.map_double import MapDouble
 from levelup.map import Map
 from levelup.direction import Direction
 from levelup.position import Position
@@ -19,15 +18,14 @@ class TestCharacter(TestCase):
     ## Remove comments to run this test, which will motivate you to write the production method
     def test_enter_map_sets_map_and_updates_position(self):
         testobj = Character(self.ARBITRARY_NAME)
-        stubbed_map = MapDouble()
+        stubbed_map = Map()
         testobj.enter_map(stubbed_map)
         self.assertEqual(stubbed_map, testobj.map)
         # self.assertEqual(testobj.current_position, stubbed_map.starting_position)
 
     # # Remove comments to run this test, which will motivate you to write the production method
     def test_move_updates_position(self):
-        testobj = Character(self.ARBITRARY_NAME)
-        # stubbed_map = MapDouble()
+        testobj = Character(self.ARBITRARY_NAME)        
         stubbed_map = Map()
         testobj.map = stubbed_map        
         
