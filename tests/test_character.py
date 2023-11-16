@@ -20,14 +20,14 @@ class TestCharacter(TestCase):
         testobj = Character(self.ARBITRARY_NAME)
         stubbed_map = Map()
         testobj.enter_map(stubbed_map)
-        self.assertEqual(stubbed_map, testobj.map)
+        self.assertEqual(stubbed_map, testobj.gameMap)
         self.assertEqual(testobj.current_position, stubbed_map.starting_position)
 
     # # Remove comments to run this test, which will motivate you to write the production method
     def test_move_updates_position(self):
         testobj = Character(self.ARBITRARY_NAME)        
         stubbed_map = Map()
-        testobj.map = stubbed_map        
+        testobj.gameMap = stubbed_map        
         
         testobj.current_position = Position(9, 4)
         testobj.move(Direction.EAST)
