@@ -23,3 +23,4 @@ def update_map(map_array, x, y, player):
 
 map = make_map()
 print_map(map)
+pass

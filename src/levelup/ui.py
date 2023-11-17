@@ -2,6 +2,9 @@ import logging
 from typing import Callable
 from levelup.controller import GameController
 from levelup.direction import Direction
+from levelup.draw_map import make_map
+from levelup.draw_map import update_map
+from levelup.draw_map import print_map
 
 VALID_DIRECTIONS = [x.value for x in Direction]
 VALID_COMMANDS = VALID_DIRECTIONS + ['x']
@@ -9,7 +12,7 @@ VALID_COMMANDS = VALID_DIRECTIONS + ['x']
 class GameApp:
 
     controller: GameController
-    starting_pos = (-100,-100)
+    starting_pos = (0,0)
 
     def __init__(self):
         self.controller = GameController()
@@ -30,6 +33,10 @@ class GameApp:
 
     def move_loop(self):
         while True:
+            print(self.controller.character.current_position)
+            pos_y = self.controller.character.current_position.x
+            pos_x = self.controller.character.current_position.y
+            update_map(make_map(),pos_x,pos_y,"S")
             response = self.prompt(
                 f"Where would you like to go? {VALID_DIRECTIONS}\n(or x to quit)",
                 lambda x: x in VALID_COMMANDS,
