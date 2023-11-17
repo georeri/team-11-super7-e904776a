@@ -8,8 +8,9 @@ class Character:
     name = ""
     current_position = Position(-100,-100)
     gameMap = Map()
-    is_move_called = True
+    is_move_called = False
     last_move_direction = None
+    is_enter_map_called = False
 
     # Since python doesn't do method overloading, this is how we support a constructor with optional parameters
     def __init__(self, character_name=DEFAULT_CHARACTER_NAME):
@@ -27,4 +28,5 @@ class Character:
         # TODO: implement method here and remove the print statement below
         self.gameMap = gameMap
         self.gameMap.starting_position = self.current_position
+        self.is_enter_map_called = True
         # print("enter_map method not yet implemented")

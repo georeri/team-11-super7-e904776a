@@ -18,6 +18,8 @@ class GameController:
 
     def __init__(self):
         self.status = GameStatus()
+        self.map = Map()
+        self.character = Character()
 
     def start_game(self):
         # TODO: implement method here and remove the print statement below
@@ -26,6 +28,7 @@ class GameController:
         # Status code is written for you
         self.status.current_position = (self.character.current_position.x, self.character.current_position.y)
         self.status.move_count = 0
+        self.character.enter_map(self.map)
 
     # Pre-written for you
     def create_character(self, character_name: str) -> None:
