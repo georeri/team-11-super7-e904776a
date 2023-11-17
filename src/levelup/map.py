@@ -7,7 +7,7 @@ class Map ():
     MIN_ALLOWED = 0
     MAX_ALLOWED = 9
     starting_position = Position(MIN_ALLOWED, MIN_ALLOWED)
-    size: Tuple[int, int] = (MAX_ALLOWED, MAX_ALLOWED)
+    size: Tuple[int, int] = (MAX_ALLOWED + 1, MAX_ALLOWED + 1)
 
     # Exists for easy testing
     num_positions = size[0]*size[1]
