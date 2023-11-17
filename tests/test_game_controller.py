@@ -38,6 +38,5 @@ class TestGameController(TestCase):
         testobj.move(arbitrary_direction)
 
         self.assertTrue(mock_char.is_move_called)
-        self.assertEqual(mock_char.last_move_direction, arbitrary_direction)
-        
+        self.assertEqual(mock_char.last_move_direction, arbitrary_direction)     
         
