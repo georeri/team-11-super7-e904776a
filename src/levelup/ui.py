@@ -36,7 +36,8 @@ class GameApp:
             print(self.controller.character.current_position)
             pos_y = self.controller.character.current_position.x
             pos_x = self.controller.character.current_position.y
-            update_map(make_map(),pos_x,pos_y,"S")
+            player_name = self.controller.character.name[0]
+            update_map(make_map(),pos_x,pos_y,player_name)
             response = self.prompt(
                 f"Where would you like to go? {VALID_DIRECTIONS}\n(or x to quit)",
                 lambda x: x in VALID_COMMANDS,
