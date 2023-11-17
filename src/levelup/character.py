@@ -6,7 +6,7 @@ DEFAULT_CHARACTER_NAME = "Character"
 class Character:
     # In python, we don't use getters. So no getPosition or getName for this class
     name = ""
-    current_position = Position(-100,-100)
+    current_position = Position(0, 0)
     gameMap = Map()
     is_move_called = False
     last_move_direction = None
