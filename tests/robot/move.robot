@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     I want to move my character. If they attempt to move past a boundary, the move results in no change in position.\n\nhttps://github.com/level-up-program/team-11-super7-e904776a/blob/main/tests/robot/images/20231117_085027.jpg?raw=true
+Documentation     I want to move my character. If they attempt to move past a boundary, the move results in no change in position.\n\n<img src="https://github.com/level-up-program/team-11-super7-e904776a/blob/main/tests/robot/images/20231117_085027.jpg?raw=true">
 Test Template     Move character
 Library           MoveLibrary.py
 
